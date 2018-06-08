@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layout_fragments.Practicas.citar_a_practica.citar_a_pract_prfile">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/alumno_profile_background">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="143dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_account_circle_black_24dp" />
+
+
+                <TextView
+                    android:id="@+id/tv__pract_Nom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nombre_apelllido"
+                    android:ems="10"
+                    android:hint="NOMBRE"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+
+                <TextView
+                    android:id="@+id/tv__pract_apellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nombre_apelllido"
+                    android:ems="10"
+                    android:hint="APELLIDOS"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv__pract_nie"
+                    android:layout_width="297dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/imagen_nie"
+                    android:ems="10"
+                    android:hint="NIE"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    />
+
+                <TextView
+                    android:id="@+id/tv__pract_tipo_carnet"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/tipo_carnet"
+                    android:ems="10"
+                    android:hint="TIPO CARNET "
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_nr_de_practicas_hechas"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nr_pract_imagen"
+                    android:ems="10"
+                    android:hint="NR_Practicas_hechas "
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv__pract_nr_pract"
+                    android:layout_width="292dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nr_pract_imagen"
+                    android:ems="10"
+                    android:hint="NR PRACTICAS"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+
+                <Button
+                    android:id="@+id/bt_seleccion_fecha"
+                    android:layout_width="297dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/calendar"
+                    android:ems="10"
+                    android:hint="SELECCIONA FECHA "
+
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp"/>
+
+                <Button
+                    android:id="@+id/bt_seleccion_hora"
+                    android:layout_width="297dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/seleccionar_hora"
+                    android:ems="10"
+                    android:hint="SELECCIONA HORA"
+                    android:text="SELECCIONA HORA"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp"/>
+
+
+
+                <Button
+                    android:id="@+id/btn_selecciona_duracion_pract"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/duracion_pract_img"
+                    android:ems="10"
+                    android:hint="SELECCIONA DURACION PRACTICA "
+                    android:text="SELECCIONA DURACION PRACTICA"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp"/>
+
+
+                <Button
+                    android:id="@+id/btn_selecciona_lugar_pract"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/lugar_salida"
+                    android:ems="10"
+                    android:hint="NUEVO ACUENTA MATRICULA "
+                    android:text="SELECCIONA SALIDA "
+
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp" />
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_confirmar_cita"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="CONFIRMAR CITA "
+                android:drawableLeft="@drawable/confirm"/>
+
+            <Button
+                android:id="@+id/btn_revisar_datos"
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:drawableRight="@drawable/review"
+                android:text="REVISAR DATOS " />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOTIFICAR ALUMNO"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/notificar_Alu"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

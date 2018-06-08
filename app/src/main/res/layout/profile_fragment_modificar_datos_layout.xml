@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".layout_fragments.gestionar_alumnos.Consultar_datos_alu.Profile_Fragment"
+    android:orientation="vertical"
+    android:background="@drawable/alumno_profile_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/alumno_profile_background">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="143dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_account_circle_black_24dp" />
+
+
+                <TextView
+                    android:id="@+id/tv__profile_Nom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nombre_apelllido"
+                    android:ems="10"
+                    android:hint="NOMBRE"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+
+                <TextView
+                    android:id="@+id/tv__profile_apellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nombre_apelllido"
+                    android:ems="10"
+                    android:hint="APELLIDOS"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv__profile_nie"
+                    android:layout_width="297dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/imagen_nie"
+                    android:ems="10"
+                    android:hint="NIE"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    />
+
+                <TextView
+                    android:id="@+id/tv__profile_tipo_carnet"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/tipo_carnet"
+                    android:ems="10"
+                    android:hint="TIPO CARNET "
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv__profile_acuenta_matr"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/money_bag"
+                    android:ems="10"
+                    android:hint="ACUENTA MATRICULA "
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv__profile_nr_pract"
+                    android:layout_width="292dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nr_pract_imagen"
+                    android:ems="10"
+                    android:hint="NR PRACTICAS"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et__profile_Nom"
+                    android:layout_width="297dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nombre_apelllido"
+                    android:ems="10"
+                    android:hint="NUEVO NOMBRE"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp"/>
+
+                <EditText
+                    android:id="@+id/et__profile_apellido"
+                    android:layout_width="297dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nombre_apelllido"
+                    android:ems="10"
+                    android:hint="NUEVOS APELLIDOS"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp"/>
+
+                <EditText
+                    android:id="@+id/et__profile_nie"
+                    android:layout_width="297dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/imagen_nie"
+                    android:ems="10"
+                    android:hint="NUEVO NIE"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp" />
+
+                <EditText
+                    android:id="@+id/et__profile_tipo_carnet"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/tipo_carnet"
+                    android:ems="10"
+                    android:hint="NUEVO TIPO CARNET "
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp"/>
+
+
+                <EditText
+                    android:id="@+id/et__profile_acuenta_matr"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/money_bag"
+                    android:ems="10"
+                    android:hint="NUEVO ACUENTA MATRICULA "
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp" />
+
+
+                <EditText
+                    android:id="@+id/et__profile_nr_pract"
+                    android:layout_width="292dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/nr_pract_imagen"
+                    android:ems="10"
+                    android:hint="NUEVO NR PRACTICAS"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp" />
+                <EditText
+                    android:id="@+id/et__profile_nr_telf_modificar_alu"
+                    android:layout_width="292dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/telefono"
+                    android:ems="10"
+                    android:hint="NUEVO NR TELF"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp" />
+                <EditText
+                    android:id="@+id/et_nueva_direccion_modificar_alu"
+                    android:layout_width="292dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/lugar_salida"
+                    android:ems="10"
+                    android:hint="NUEVA DIRECCION"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="10dp" />
+
+
+                <Button
+                    android:id="@+id/modificar_alu"
+                    android:layout_width="334dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="GUARDAR CAMBIOS " />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

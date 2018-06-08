@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layout_fragments.gestionar_alumnos.Consultar_datos_alu.Profile_Fragment"
+    android:orientation="vertical"
+    android:background="@drawable/alumno_profile_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="157dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_account_circle_black_24dp" />
+
+
+            <TextView
+                android:id="@+id/tv__profile_Nom"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/nombre_apelllido"
+                android:ems="10"
+                android:hint="NOMBRE"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark" />
+
+
+            <TextView
+                android:id="@+id/tv__profile_apellido"
+                android:layout_width="233dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/nombre_apelllido"
+                android:ems="10"
+                android:hint="APELLIDOS"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="46dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv__profile_nie"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/imagen_nie"
+                android:ems="10"
+                android:hint="NIE"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv__profile_tipo_carnet"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/tipo_carnet"
+                android:ems="10"
+                android:hint="TIPO CARNET "
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/tv__profile_acuenta_matr"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/money_bag"
+                android:ems="10"
+                android:hint="ACUENTA MATRICULA "
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/tv__profile_nr_pract"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/nr_pract_imagen"
+                android:ems="10"
+                android:hint="NR PRACTICAS"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_Telefono"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/telefono"
+                android:ems="10"
+                android:hint="TELEFONO"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_Direccion"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/lugar_salida"
+                android:ems="10"
+                android:hint="DIRECCION"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/nr_practicas_hechas_consultar"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/nr_pract_imagen"
+                android:ems="10"
+                android:hint="NR PRACTICAS HECHAS"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp" />
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+
+
+            <Button
+                android:id="@+id/generar_pdf"
+                android:layout_width="334dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Vizualizar ficha "
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/generar_pdf_app"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Exportar ficha" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

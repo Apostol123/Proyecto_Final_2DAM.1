@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layout_fragments.Bonos.Modificar_Bono"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MODIFICAR BONO"
+            android:textSize="32dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/holo_red_dark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="55dp">
+
+
+        <Button
+            android:id="@+id/button_text_modificar_bono_fecha_bono"
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/calendar"
+            android:ems="10"
+            android:hint="NUEVA FECHA BONO"
+            android:textAlignment="center" />
+
+        <EditText
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/importe_modificar_bono"
+            android:ems="10"
+            android:hint="NUEVO IMPORTE BONO"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:inputType="numberDecimal"
+            android:drawableLeft="@drawable/money_bag"
+            />
+        <EditText
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nr_de_practicas_modificar_bono"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:hint="NUEVO NUMERO DE PRACTICAS"
+            android:drawableLeft="@drawable/nr_pract_imagen"/>
+        <Button
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_seleccionar_alumno_modificar_bonos"
+            android:text="SELECCIONAR NUEVO ALUMNO"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:ems="10"
+            android:textColor="@android:color/holo_red_dark"
+            android:drawableLeft="@drawable/seleccionar"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Datos Bono"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="15dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp">
+        <TextView
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:hint="Fecha"
+            android:id="@+id/tv_fecha_Bono_a_modificar"
+            android:drawableLeft="@drawable/nombre_apelllido"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:ems="10"/>
+        <TextView
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:hint="Nombre Del Alumno"
+            android:id="@+id/Nombre_del_alumno_Del_Bono"
+            android:drawableLeft="@drawable/nombre_apelllido"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:ems="10"/>
+        <TextView
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:hint="Nr de practicas de bono"
+            android:id="@+id/nr_de_practicas_bono_a_modificar"
+            android:drawableLeft="@drawable/nr_pract_imagen"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:ems="10"/>
+        <TextView
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:hint="Importe del Bono"
+            android:id="@+id/tv_importe_del_bono"
+            android:drawableLeft="@drawable/money_bag"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:ems="10"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_guardar_bono_modificado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/confirm"
+            android:text="Confirmar Modificación Bono"
+            android:layout_gravity="center"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

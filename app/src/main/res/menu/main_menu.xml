@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Consultar_Alumnos_nav"
+        android:title="Consultar Alumnos"></item>
+    <item
+        android:id="@+id/Dar_de_Alta_Alumnos_nav"
+        android:title="Dar de alta  Alumnos"></item>
+
+</menu>

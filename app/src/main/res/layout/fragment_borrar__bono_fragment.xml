@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".layout_fragments.Bonos.Borrar_Bono_fragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="61dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="172dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/nuevo_bono" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/fecha_bono_a_eliminar"
+            android:hint="Fecha Bono "
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18dp"
+
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/importe_bono_a_eliminar"
+            android:hint="Importe Bono "
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18dp"
+
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nr_de_pract_bono_a_eliminar"
+            android:hint="NR de PRacticas de bono  "
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18dp"
+
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombre_alumno_bono_a_eliminar"
+            android:hint="Nombre ALumno  "
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18dp"
+
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/apeliido_alumno_bono_a_eliminar"
+            android:hint="Apellido ALu   "
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18dp"
+
+            android:textStyle="bold"
+
+            />
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_eliminar_bono"
+            android:hint="ELIMINAR BONO   "
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18dp"
+
+            android:textStyle="bold"
+
+            />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Proyecto_Final_2DAM</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <array name="plantes_arrays">
+        <item>Dar de alta</item>
+        <item>Consultar Datos Alumno</item>
+        <item>Modificar Alumnos</item>
+        <item>Agenda</item>
+        <item>Nuevo Bono</item>
+        <item>Menu Principal</item>
+        <item>Salir</item>
+    </array>
+</resources>
