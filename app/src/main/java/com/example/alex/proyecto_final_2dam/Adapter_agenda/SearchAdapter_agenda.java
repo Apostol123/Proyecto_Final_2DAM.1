@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.alex.proyecto_final_2dam.Auxiliar.Classe_Estatica_auxiliar;
 import com.example.alex.proyecto_final_2dam.R;
 import com.example.alex.proyecto_final_2dam.entidades.Alumno;
 import com.example.alex.proyecto_final_2dam.entidades.Practica;
@@ -56,7 +57,7 @@ class SearchViewHolder_agenda extends RecyclerView.ViewHolder implements View.On
         modificar_datos_practica.setAlumno(alumno);
         modificar_datos_practica.setPractica(practica);
 
-        android.support.v4.app.FragmentManager fragmentManager = agenda_fragment.getActivity().getSupportFragmentManager();
+        android.support.v4.app.FragmentManager fragmentManager = Classe_Estatica_auxiliar.getAgenda_fragment().getActivity().getSupportFragmentManager();
 
 
         fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout, modificar_datos_practica).addToBackStack(null).commit();
@@ -150,7 +151,7 @@ public class SearchAdapter_agenda extends RecyclerView.Adapter<SearchViewHolder_
     @Override
     public void onBindViewHolder(@NonNull SearchViewHolder_agenda holder, int position) {
 
-        if (fragment!=null) {
+        if (Classe_Estatica_auxiliar.getAgenda_fragment()!=null) {
             System.out.println("no es null " + true);
             holder.setAgenda_fragment(fragment);
 

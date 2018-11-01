@@ -4,17 +4,18 @@ package com.example.alex.proyecto_final_2dam.layout_fragments.gestionar_alumnos.
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.PopupMenu;
+
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+
 
 import com.example.alex.proyecto_final_2dam.Adapter.SearchAdapter;
+import com.example.alex.proyecto_final_2dam.Auxiliar.Classe_Estatica_auxiliar;
 import com.example.alex.proyecto_final_2dam.R;
 import com.example.alex.proyecto_final_2dam.dao.AlumnosDAO;
 import com.example.alex.proyecto_final_2dam.db.Base_deDatos_Autoescuela;
@@ -26,6 +27,9 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
+
+
+
 public class Consultar_alumnos_fragment extends Fragment {
     private AlumnosDAO alumnosDAO;
     private RecyclerView recyclerView;
@@ -48,7 +52,7 @@ public class Consultar_alumnos_fragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_consultar_alumnos_fragment, container, false);
 
-        Base_deDatos_Autoescuela base_deDatos_autoescuela = new Base_deDatos_Autoescuela(getContext());
+        Base_deDatos_Autoescuela base_deDatos_autoescuela = Classe_Estatica_auxiliar.getBase_deDatos_autoescuela_MAIN();
 
         alumnosDAO = new AlumnosDAO(base_deDatos_autoescuela);
 
@@ -113,7 +117,7 @@ public class Consultar_alumnos_fragment extends Fragment {
         });
         Bundle bundle = getArguments();
         if (bundle != null) {
-
+            //fer un switch
             if (bundle.getString("baja") != null) {
                 adapter = new SearchAdapter(getContext(), alumnosDAO.llista_Alu());
                 adapter.setBaja(true);
@@ -168,3 +172,4 @@ public class Consultar_alumnos_fragment extends Fragment {
 
 
 }
+

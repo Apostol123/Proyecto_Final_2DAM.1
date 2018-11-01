@@ -77,7 +77,7 @@ public class Borrar_Bono_fragment extends Fragment {
                            bundle.putString("borrar","borrar");
                            bonos_fragment .setArguments(bundle);
                            fragmentManager.popBackStack();
-                           fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right).replace(R.id.frame_layout,bonos_fragment ).addToBackStack("BONO ALU").commit();
+                           fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right).replace(R.id.frame_layout,bonos_fragment ).addToBackStack("bonos_fragment").commit();
 
                        }
                    }).setNegativeButton("NO", new DialogInterface.OnClickListener() {

@@ -11,7 +11,14 @@
         <item>Modificar Alumnos</item>
         <item>Agenda</item>
         <item>Nuevo Bono</item>
+        <item>Citar a Practica</item>
         <item>Menu Principal</item>
         <item>Salir</item>
+        <item>Cerrar Session</item>
+        <item>Copia Seguridad BD</item>
+        <item>Cargar Datos </item>
     </array>
+
+    <string name="facebook_app_id">517144422016664</string>
+
 </resources>

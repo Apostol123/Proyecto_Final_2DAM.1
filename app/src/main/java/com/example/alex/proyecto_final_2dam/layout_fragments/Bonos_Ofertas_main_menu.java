@@ -48,14 +48,14 @@ public class Bonos_Ofertas_main_menu extends Fragment {
                         android.support.v4.app.FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
 
 
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right).replace(R.id.frame_layout,new Nuevo_Bono()).addToBackStack("BONO ALU").commit();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right).replace(R.id.frame_layout,new Nuevo_Bono()).addToBackStack("nuevo_bono").commit();
 
 
                     } else if (finalI==1){
                         android.support.v4.app.FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
 
 
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right).replace(R.id.frame_layout,new Bonos_Fragment()).addToBackStack("BONO ALU").commit();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right).replace(R.id.frame_layout,new Bonos_Fragment()).addToBackStack("bonos_fragment").commit();
 
 
                     } else if (finalI==2){
@@ -65,7 +65,7 @@ public class Bonos_Ofertas_main_menu extends Fragment {
                         Bundle bundle = new Bundle();
                         bundle.putString("borrar","borrar");
                         bonos_fragment.setArguments(bundle);
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right).replace(R.id.frame_layout,bonos_fragment ).addToBackStack("BONO ALU").commit();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right).replace(R.id.frame_layout,bonos_fragment ).addToBackStack("bonos_fragment").commit();
 
 
 

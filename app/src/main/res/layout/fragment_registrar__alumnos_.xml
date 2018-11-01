@@ -52,7 +52,8 @@
                 android:ems="10"
                 android:hint="NOMBRE"
                 android:inputType="textPersonName"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                />
 
             <EditText
                 android:id="@+id/apellido"

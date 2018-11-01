@@ -11,6 +11,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class Base_deDatos_Autoescuela extends SQLiteOpenHelper {
 
 
+   private  final String crear_tabla_usuarios ="create table usuarios(" +
+           "nie text primary key ," +
+           "password not null);";
    private final String crear_tabla_alumnos="create table alumnos(nie text primary key," +
             " nom text not null," +
             "cognoms text not null," +
@@ -58,6 +61,7 @@ public class Base_deDatos_Autoescuela extends SQLiteOpenHelper {
         db.execSQL(crear_tabla_alumnos);
         db.execSQL(crear_tabla_practicas);
         db.execSQL(crear_tabla_bonos);
+        db.execSQL(crear_tabla_usuarios);
 
 
 
@@ -70,11 +74,14 @@ public class Base_deDatos_Autoescuela extends SQLiteOpenHelper {
             db.execSQL("drop table if exists practicas ");
             db.execSQL("drop table if exists bonos");
             db.execSQL("drop table if exists manejo_bonos");
+            db.execSQL("drop table if exists usuarios");
 
 
             db.execSQL(crear_tabla_alumnos);
             db.execSQL(crear_tabla_practicas);
             db.execSQL(crear_tabla_bonos);
+            db.execSQL(crear_tabla_usuarios);
+
 
 
     }

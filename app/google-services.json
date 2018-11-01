@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "466488206551",
+    "firebase_url": "https://pegant-fort.firebaseio.com",
+    "project_id": "pegant-fort",
+    "storage_bucket": "pegant-fort.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466488206551:android:8abc4e3a893297f0",
+        "android_client_info": {
+          "package_name": "com.example.alex.proyecto_final_2dam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466488206551-pp5gpt5hpv82pfritrsopmmfe81n6cc2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alex.proyecto_final_2dam",
+            "certificate_hash": "d2ca8e8ff478cd03dec359672021b5a00ececc8d"
+          }
+        },
+        {
+          "client_id": "466488206551-jqheoh7tj39ljr502hvfrsmbctnr3gkf.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "466488206551-jqheoh7tj39ljr502hvfrsmbctnr3gkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9zlTmgyGLDLC9HqqFW9vjCT6HSsmrBe4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466488206551-jqheoh7tj39ljr502hvfrsmbctnr3gkf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

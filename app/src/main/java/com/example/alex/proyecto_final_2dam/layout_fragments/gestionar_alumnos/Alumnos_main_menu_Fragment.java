@@ -45,13 +45,13 @@ public class Alumnos_main_menu_Fragment extends Fragment {
                         android.support.v4.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 
                         Registrar_Alumnos_Fragment registrar_alumnos_fragment = new  Registrar_Alumnos_Fragment();
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout, registrar_alumnos_fragment).addToBackStack(null).commit();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout, registrar_alumnos_fragment,"alta_alu").addToBackStack(null).commit();
 
                     } else if(finalI==1){
                         android.support.v4.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 
 
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout, new Consultar_alumnos_fragment()).addToBackStack("lista_alu").commit();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout, new Consultar_alumnos_fragment(),"consultar_datos").addToBackStack(null).commit();
 
                     }else if (finalI == 3) {
                         android.support.v4.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

@@ -49,9 +49,10 @@ public class Agenda_Fragment extends Fragment {
     private SearchAdapter_agenda adapter;
     private MaterialSearchBar materialSearchBar;
     private AlumnosDAO alumnosDAO;
-    private ArrayList<Practica> practicas_de_ese_dia;
+    private ArrayList<Practica> practicas_de_ese_dia=new ArrayList<>();
     private ArrayList<Alumno> alumnos_de_con_practicas_de_ese_dia=new ArrayList<>();
-    private Date mainDate;
+    private String MAinDAte;
+    ArrayList<Practica> practicas;
 
 
 
@@ -63,7 +64,7 @@ public class Agenda_Fragment extends Fragment {
         // Required empty public constructor
     }
     private android.support.v7.widget.Toolbar toolbar;
-    private SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
+    private SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("d-M-yyyy", Locale.getDefault());
 
    private  CompactCalendarView compactCalendarView;
 
@@ -79,21 +80,26 @@ public class Agenda_Fragment extends Fragment {
         final android.support.v7.app.ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setTitle(null);
+        Classe_Estatica_auxiliar.setAgenda_fragment(this);
 
         practicas_dao=new Practicas_DAO(Classe_Estatica_auxiliar.getBase_deDatos_autoescuela_MAIN());
 
         alumnosDAO=new AlumnosDAO(Classe_Estatica_auxiliar.getBase_deDatos_autoescuela_MAIN());
 
+        practicas=practicas_dao.getPraacticas();
+            /*
         Date date1 = Calendar.getInstance().getTime();
 
-        mainDate=date1;
-        String selected_date=dateFormatForMonth.format(mainDate).toString();
+
+        String selected_date=dateFormatForMonth.format(date1).toString();
 
         System.out.println("FIRST DATE TO STRING "+selected_date);
         loadPracticas(selected_date);
 
         Poluate_Day_with_practicas poluate_day_with_practicas = new Poluate_Day_with_practicas();
         poluate_day_with_practicas.execute();
+        */
+
 
 
 
@@ -160,9 +166,11 @@ public class Agenda_Fragment extends Fragment {
         compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
-                System.out.println("DAte clicked "+dateClicked);
-                String selected_date=dateFormatForMonth.format(dateClicked).toString();
 
+                String selected_date=dateFormatForMonth.format(dateClicked).toString();
+                System.out.println("DAte clicked "+selected_date);
+
+                MAinDAte=selected_date;
 
                 startSearch(selected_date);
 
@@ -187,11 +195,20 @@ public class Agenda_Fragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        adapter = new SearchAdapter_agenda(getContext(),practicas_de_ese_dia,alumnos_de_con_practicas_de_ese_dia);
+        recyclerView.setAdapter(adapter);
+
+    }
 
     private void startSearch(String text) {
         System.out.println("SELECTED DATE "+text);
-        loadPracticas(text);
+            loadPracticas(text);
         System.out.println("TAMAÑO DE LAS PRACTICCAS DE ESE DIA "+practicas_de_ese_dia.size());
+
         //System.out.println("LUGAR DE PRACTICA "+practicas_de_ese_dia.get(0).getLugar_practica());
         Poluate_Day_with_practicas poluate_day_with_practicas = new Poluate_Day_with_practicas();
         poluate_day_with_practicas.execute();
@@ -199,6 +216,8 @@ public class Agenda_Fragment extends Fragment {
         recyclerView.setAdapter(adapter);
         adapter.setFragment(this);
     }
+
+
 
 
 
@@ -241,6 +260,11 @@ public class Agenda_Fragment extends Fragment {
         @Override
         protected Boolean doInBackground(Void... voids) {
             boolean correcto=false;
+
+
+
+
+
             if (practicas_de_ese_dia!=null){
 
                 System.out.println("size del practiacs de ese dia en el poluate day with practicas "+practicas_de_ese_dia.size());
@@ -261,11 +285,10 @@ public class Agenda_Fragment extends Fragment {
     }
 
     private void loadPracticas(String date){
-        practicas_de_ese_dia = new ArrayList<>();
-        for (int i = 0; i <practicas_dao.getPraacticaByDate(date).size() ; i++) {
-            practicas_de_ese_dia.add(practicas_dao.getPraacticaByDate(date).get(i));
-        }
-        System.out.println("tamaño de las practicas de ese del metodo loadPracticas");
+
+
+        practicas_de_ese_dia =practicas_dao.getPraacticaByDate(date);
+        System.out.println("tamaño de las practicas de ese del metodo loadPracticas"+practicas_dao.getPraacticaByDate(date));
     }
 
 
@@ -307,10 +330,7 @@ public class Agenda_Fragment extends Fragment {
         @Override
         protected Boolean doInBackground(Void... voids) {
           //  final Event ev1 = new Event(Color.RED,date.getTime(),"My EVENT");
-            ArrayList<Practica> practicas=new ArrayList<>();
-            for (int i = 0; i <practicas_dao.getPraacticas().size() ; i++) {
-                practicas.add(practicas_dao.getPraacticas().get(i));
-            }
+
             boolean correcto=false;
             if (practicas!=null){
                 System.out.println("size de todas las pracitcas "+practicas.size());
@@ -323,13 +343,50 @@ public class Agenda_Fragment extends Fragment {
                         System.out.println("Date en el aasync de pulate "+date);
                         String date2 = dateFormatForMonth.format(date);
                         System.out.println("date 2 "+date2);
+                        System.out.println("Main DAte "+MAinDAte);
 
 
+
+                        Date date1 = Calendar.getInstance().getTime();
+
+
+
+                        String current_date=dateFormatForMonth.format(date1).toString();
                         Event event = new Event(Color.BLACK,date.getTime(),"PRACTICA");
-                        if (practicas.get(i).isRealizada()) {
-                            event = new Event(Color.GREEN, date.getTime(), "PRACTICA");
 
+                        try {
+
+                            // Cojo la fecha acutal
+                            // compruebo si la fecha de la practia es inferior a la acutal
+                            // si es  asi compruebo si la preactia esta realizada o n o
+                            //
+                            Date current_date1 = dateFormatForMonth.parse(current_date);
+
+                            Date selected_date =dateFormatForMonth.parse(practicas.get(i).getData_pract());
+
+
+
+                            if (current_date1.after(selected_date)&&!practicas.get(i).isRealizada()){
+
+                                event = new Event(Color.RED, date.getTime(), "PRACTICA");
+
+                            } else if (current_date1.after(selected_date)&&practicas.get(i).isRealizada()){
+
+                                    event = new Event(Color.GREEN, date.getTime(), "PRACTICA");
+
+
+                            }
+
+
+
+                        } catch (ParseException e) {
+                            e.printStackTrace();
                         }
+
+
+
+
+
 
                         compactCalendarView.addEvent(event);
                     } catch (ParseException e) {

@@ -40,9 +40,13 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -86,7 +90,7 @@ public class citar_a_pract_prfile extends Fragment implements GoogleApiClient.On
         private TextView tv_nr_pract_hechas;
         private TextView tv_nr_practicas;
          private Plantilla_pdf plantilla_pdf;
-
+    private SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
     public citar_a_pract_prfile() {
         // Required empty public constructor
     }
@@ -119,7 +123,7 @@ public class citar_a_pract_prfile extends Fragment implements GoogleApiClient.On
         alumnosDAO=new AlumnosDAO(Classe_Estatica_auxiliar.getBase_deDatos_autoescuela_MAIN());
 
         plantilla_pdf= new Plantilla_pdf(this.getContext());
-        plantilla_pdf.CreateTable(header,getAlumnos());
+//        plantilla_pdf.CreateTable(header,getAlumnos());
 
         load_Data();
         requestPermsion();
@@ -173,6 +177,7 @@ public class citar_a_pract_prfile extends Fragment implements GoogleApiClient.On
             }
         });
 
+
         btn_revisar_daots.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,6 +198,7 @@ public class citar_a_pract_prfile extends Fragment implements GoogleApiClient.On
             }
         });
 
+
         return view;
     }
 
@@ -210,7 +216,7 @@ public class citar_a_pract_prfile extends Fragment implements GoogleApiClient.On
     private void onClickSeleccionarLugar(){
         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
         try {
-            Intent intent = builder.build(this.getActivity());
+            Intent intent = builder.build(Classe_Estatica_auxiliar.getMainActivity());
             startActivityForResult(intent,PLACE_PICKER_REQUEST);
         } catch (GooglePlayServicesRepairableException e) {
             e.printStackTrace();
@@ -320,7 +326,13 @@ public class citar_a_pract_prfile extends Fragment implements GoogleApiClient.On
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month=month+1;
 
+
                 fecha_pract=dayOfMonth+"-"+month+"-"+year;
+                System.out.println("fehch e citar a practca "+fecha_pract);
+                if(control_citas_Practicas()){
+                    fecha_pract=dayOfMonth+"-"+month+"-"+year;
+                } else
+                    fecha_pract="";
             }
         };
 
@@ -457,5 +469,28 @@ public class citar_a_pract_prfile extends Fragment implements GoogleApiClient.On
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+    private boolean control_citas_Practicas(){
+        Date date1 = Calendar.getInstance().getTime();
+        Boolean correcte = false;
+
+
+        String current_date=dateFormatForMonth.format(date1).toString();
+        try {
+            Date current_date1 = dateFormatForMonth.parse(current_date);
+            Date selected_date =dateFormatForMonth.parse(fecha_pract);
+            if (current_date1.after(selected_date)){
+                Toast.makeText(getContext(),"NO SE PUEDE CIATAR EN UNA FECHA INFORIOR A LA ACUTAL ",Toast.LENGTH_LONG).show();
+                fecha_pract="";
+            } else{
+                correcte = true;
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return  correcte;
     }
 }

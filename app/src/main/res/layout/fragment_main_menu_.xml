@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@drawable/menu_principal"
-    tools:context="com.example.alex.proyecto_final_2dam.layout_fragments.Main_menu_Fragment">
+    tools:context="com.example.alex.proyecto_final_2dam.layout_fragments.Main_menu_Fragment"
+    android:backgroundTint="@color/white">
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -25,6 +25,7 @@ import com.example.alex.proyecto_final_2dam.entidades.Alumno;
 import com.example.alex.proyecto_final_2dam.entidades.Bono_Practica;
 import com.example.alex.proyecto_final_2dam.layout_fragments.gestionar_alumnos.Consultar_datos_alu.Consultar_alumnos_fragment;
 
+import java.sql.SQLOutput;
 import java.util.Calendar;
 
 
@@ -72,6 +73,8 @@ public class Nuevo_Bono extends Fragment {
         bono_dao=new Bono_DAO(base_deDatos_autoescuela);
         alumnosDAO = new AlumnosDAO(base_deDatos_autoescuela);
 
+        inicializarDatos();
+
 
         fecha_bono.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +88,7 @@ public class Nuevo_Bono extends Fragment {
             @Override
             public void onClick(View v) {
                 onClickSeleccionarAlu();
+
             }
         });
 
@@ -94,18 +98,8 @@ public class Nuevo_Bono extends Fragment {
                 camposCompletados();
             }
         });
-        inicializarDatos();
 
-        final Handler handler = new Handler();
-        final int tiempo_refresco = 10000;
 
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                inicializarDatos();
-                handler.postDelayed(this,tiempo_refresco);
-            }
-        },tiempo_refresco);
 
 
         return view;
@@ -124,10 +118,11 @@ public class Nuevo_Bono extends Fragment {
 
     }
     private void inicializarDatos(){
-        if (Classe_Estatica_auxiliar.getAlumno()!=null){
-            alumno =Classe_Estatica_auxiliar.getAlumno();
-            nombre_alu.setText("Nombre: "+alumno.getNom());
-            apelldios_alu.setText("Apellidos: "+alumno.getCognoms());
+        if (Classe_Estatica_auxiliar.getAlumno_bonos()!=null){
+            alumno =Classe_Estatica_auxiliar.getAlumno_bonos();
+
+            nombre_alu.setText("Nombre: "+alumno.getNom().toString());
+            apelldios_alu.setText("Apellidos: "+alumno.getCognoms().toString());
             nr_pract_alu.setText("Practicas por hacer: "+String .valueOf(alumno.getNr_practicas()));
             diner_gastado_alu.setText("Dinero Gastado: "+String .valueOf(alumno.getAcuenta_matricula())+" €");
 

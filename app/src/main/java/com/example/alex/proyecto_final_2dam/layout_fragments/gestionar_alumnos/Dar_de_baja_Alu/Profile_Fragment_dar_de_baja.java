@@ -13,8 +13,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.alex.proyecto_final_2dam.Auxiliar.Classe_Estatica_auxiliar;
 import com.example.alex.proyecto_final_2dam.R;
 import com.example.alex.proyecto_final_2dam.dao.AlumnosDAO;
+import com.example.alex.proyecto_final_2dam.dao.Bono_DAO;
+import com.example.alex.proyecto_final_2dam.dao.Practicas_DAO;
 import com.example.alex.proyecto_final_2dam.db.Base_deDatos_Autoescuela;
 import com.example.alex.proyecto_final_2dam.entidades.Alumno;
 import com.example.alex.proyecto_final_2dam.layout_fragments.gestionar_alumnos.Consultar_datos_alu.Consultar_alumnos_fragment;
@@ -39,6 +42,8 @@ public class Profile_Fragment_dar_de_baja extends Fragment {
     private TextView tv_tipo_caret;
     private TextView tv_acuenta_matricula;
     private TextView tv_nr_practicas;
+    private Practicas_DAO practicas_dao;
+    private Bono_DAO bono_dao;
 
 
 
@@ -60,7 +65,9 @@ public class Profile_Fragment_dar_de_baja extends Fragment {
         btn_borrar_alu=(Button)view.findViewById(R.id.dar_de_baja);
 
 
-        Base_deDatos_Autoescuela base_deDatos_autoescuela = new Base_deDatos_Autoescuela(getContext());
+        Base_deDatos_Autoescuela base_deDatos_autoescuela = Classe_Estatica_auxiliar.getBase_deDatos_autoescuela_MAIN();
+        practicas_dao=new Practicas_DAO(base_deDatos_autoescuela);
+        bono_dao = new Bono_DAO(base_deDatos_autoescuela);
 
         alumnosDAO=new AlumnosDAO(base_deDatos_autoescuela);
 
@@ -127,7 +134,7 @@ public class Profile_Fragment_dar_de_baja extends Fragment {
 
     private void onClickDarDeBajaAlu(){
 
-        if (alumnosDAO.borrar_alu(alumno)) {
+        if (alumnosDAO.borrar_alu(alumno)&&practicas_dao.eliminar_pract_por_nie_alu(alumno)&&bono_dao.borrar_bono_por_nie_alu(alumno)) {
 
             android.support.v4.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 

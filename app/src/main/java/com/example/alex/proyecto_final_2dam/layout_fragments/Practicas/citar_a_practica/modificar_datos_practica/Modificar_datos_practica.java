@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.alex.proyecto_final_2dam.Auxiliar.Classe_Estatica_auxiliar;
 import com.example.alex.proyecto_final_2dam.Auxiliar.CostumDialogClass;
 import com.example.alex.proyecto_final_2dam.R;
 import com.example.alex.proyecto_final_2dam.dao.AlumnosDAO;
@@ -179,15 +181,20 @@ public class Modificar_datos_practica extends Fragment {
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                android.support.v4.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 
-                                Consultar_alumnos_fragment consultar_alumnos_fragment = new Consultar_alumnos_fragment();
-                                Bundle bundle= new Bundle();
-                                bundle.putString("baja","Baja");
-                                consultar_alumnos_fragment.setArguments(bundle);
-                                fragmentManager.popBackStack();
-                                fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout,consultar_alumnos_fragment ).addToBackStack(null).commit();
+                                android.support.v4.app.FragmentTransaction fragmentTransaction = Classe_Estatica_auxiliar.getFragmentManager().beginTransaction();
+                                Agenda_Fragment  agenda_fragment= (Agenda_Fragment)   Classe_Estatica_auxiliar.getFragmentManager().findFragmentByTag("agenda");
 
+                                if (agenda_fragment!=null) {
+                                    System.out.println("esta creado el fragment de agenda");
+                                    Log.e("alu", "esta creado el fragment de registrar alumnos");
+                                    Classe_Estatica_auxiliar.getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout, agenda_fragment).addToBackStack("agenda").commit();
+
+                                }else {
+                                    System.out.println("NO NO N NO esta creado el fragment de agenda");
+
+                                    Classe_Estatica_auxiliar.getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout, new Agenda_Fragment()).addToBackStack("agenda").commit();
+                                }
 
                             }
                         });
@@ -327,6 +334,7 @@ private  void onChecBoxClicked(View view){
 
         if (practicas_dao.modificarPractica(practica)){
             loadData();
+
 
             Toast toast = Toast.makeText(getContext(),"CAMBIOS GUARDADOS!",Toast.LENGTH_LONG);
             toast.show();
@@ -505,4 +513,6 @@ private  void onChecBoxClicked(View view){
             }
         }
     }
+
+
 }

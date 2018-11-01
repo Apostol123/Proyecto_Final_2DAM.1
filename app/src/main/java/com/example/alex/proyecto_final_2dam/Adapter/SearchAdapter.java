@@ -87,7 +87,7 @@ class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
             citar_a_pract_prfile citar_a_pract_prfile = new citar_a_pract_prfile();
            citar_a_pract_prfile.setAlumno(alumnos.get(getAdapterPosition()));
             fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_layout, citar_a_pract_prfile).addToBackStack(null).commit();
-            System.out.println(alumnos.get(getAdapterPosition()).getNom());
+            System.out.println("NOMBRE DEL ALU DE LA PRACTICA "+alumnos.get(getAdapterPosition()).getNom());
 
 
         } else if (bono){

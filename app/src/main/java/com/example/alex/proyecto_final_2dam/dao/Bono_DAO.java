@@ -96,4 +96,18 @@ public class Bono_DAO {
         }
         return borrado;
     }
+
+    public boolean borrar_bono_por_nie_alu(Alumno alumno){
+        boolean borrado=false;
+        db = basedeDatosAutoescuela.getWritableDatabase();
+        if (db!=null){
+            String selection = "nie_alumno "+"LIKE ?";
+            String[] selection_args={String.valueOf(alumno.getNie())};
+            long deleted = db.delete("bonos",selection,selection_args);
+            if (deleted!=-1){
+                borrado=true;
+            }
+        }
+        return borrado;
+    }
 }

@@ -22,35 +22,61 @@ public class Practicas_DAO {
         System.out.println("Date in get by date "+date);
         ArrayList<Practica> practicas = new ArrayList<>();
 
-//new String[]{date}
+
             db = basedeDatosAutoescuela.getReadableDatabase();
 
-            String consulata = "select * from practicas where data_pract = "+"'%"+date+"%'"+" ;";
+
             String [] args = {"'"+date+"'"};
-        System.out.println("CONSULTA DE LA SELECT "+consulata);
+
+
+
+        System.out.println("Date in get by date new version  "+date);
+        System.out.println();
+
         String [] columns = {"codi","data_pract","lugar_pract","duracion","nie_alu","hora_salida","realizada"};
 
-            Cursor cursor = db.query("practicas",columns,"data_pract like ?",new String[]{"%"+date+"%"},null,null,null);
+        String query = "select * from practicas where data_pract= "+"'"+date+"'";
+        System.out.println("MAIN SELECT DE PRACTICAS BY DATE "+query);
+
+
+
+            Cursor cursor = db.rawQuery(query,null);
+
+       // Cursor cursor = db.query("practicas",columns,"data_pract like ?",new String[]{"%"+date+"%"+";"},null,null,null);
+
+        // Cursor cursor1 = db.rawQuery(query,null);
+
+
 
                 if (db!=null){
                     if (cursor.moveToFirst()){
-                        do {
-                            Practica practica = new Practica();
-                            practica.setId(cursor.getInt(0));
-                            practica.setData_pract(cursor.getString(1));
-                            practica.setLugar_practica(cursor.getString(2));
-                            practica.setDuracion(cursor.getString(3));
-                            practica.setNiew_alu(cursor.getString(4));
-                            practica.setHora_salid(cursor.getString(5));
-                            boolean value = cursor.getInt(6)>0;
+                    try {
 
-                            practica.setRealizada(value);
-                            practicas.add(practica);
+                            do {
+                                Practica practica = new Practica();
+                                practica.setId(cursor.getInt(0));
+                                practica.setData_pract(cursor.getString(1));
+                                practica.setLugar_practica(cursor.getString(2));
+                                practica.setDuracion(cursor.getString(3));
+                                practica.setNiew_alu(cursor.getString(4));
+                                practica.setHora_salid(cursor.getString(5));
+                                boolean value = cursor.getInt(6)>0;
+                                practica.setRealizada(value);
 
-                        }while (cursor.moveToNext());
+
+                                practicas.add(practica);
+
+                            }while (cursor.moveToNext());
+
+                    }catch (Exception e){
+                        System.out.println("Exepcion del select " + e.toString());
+
+                    }
 
                     } else
                         System.out.println("ERROR EN CURSOSR DE GET PRACTICAS by date  EN PRACTICAS_DAO getPraacticaByDate");
+
+
 
                 } else System.out.println("base de datos nula en get pracicas by date");
 
@@ -220,6 +246,21 @@ public class Practicas_DAO {
         }
         return eliminada;
     }
+    public boolean eliminar_pract_por_nie_alu(Alumno alumno){
+        boolean eliminada=false;
+        db=basedeDatosAutoescuela.getWritableDatabase();
+        if (db!=null){
+            String selection = "nie_alu "+"LIKE ?";
+            String [] selection_args= {String.valueOf(alumno.getNie())};
+            long eliminated=db.delete("practicas",selection,selection_args);
+            if (eliminated!=-1){
+                eliminada=true;
+            }
+
+        }
+        return eliminada;
+    }
+
 
 
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alex.proyecto_final_2dam">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
 
@@ -15,34 +16,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA6bC6a77kPk5TE6jDRxNKN2UJK1HFh_S0"
-           />
+            android:value="AIzaSyBgJuh8L06waXyq5L9FHE3N8_1a4pSpK-U" />
 
 
 
         <provider
-            android:name="com.example.alex.proyecto_final_2dam.Auxiliar.GenericFileProvider"
+            android:name=".Auxiliar.GenericFileProvider"
             android:authorities="${applicationId}com.example.alex.proyecto_final_2dam.Auxiliar.GenericFileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            >
-
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".layout_fragments.login_Package.Sign_upAcitivity"></activity>
     </application>
 
 </manifest>

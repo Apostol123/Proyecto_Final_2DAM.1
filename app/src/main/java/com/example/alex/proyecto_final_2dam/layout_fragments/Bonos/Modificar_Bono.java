@@ -132,6 +132,12 @@ public class Modificar_Bono extends Fragment {
         }
 
         if (Classe_Estatica_auxiliar.getAlumno_bonos()!=null){
+            
+            Alumno alumno_bono_viejo=alumnosDAO.get_Alumno_por_NIE(bono_practica.getNie_alu());
+            alumno_bono_viejo.setNr_practicas(alumno_bono_viejo.getNr_practicas()-bono_practica.getCant_practicas());
+            alumno_bono_viejo.setAcuenta_matricula(alumno_bono_viejo.getAcuenta_matricula()-bono_practica.getCantida_dinero());
+            alumnosDAO.modificarDatos(alumno_bono_viejo);
+
             alumno=Classe_Estatica_auxiliar.getAlumno_bonos();
 
             alumno.setNr_practicas(alumno.getNr_practicas()+bono_practica.getCant_practicas());
